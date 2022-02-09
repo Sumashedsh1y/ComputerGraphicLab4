@@ -182,8 +182,8 @@ struct Shape3d {
 		for (const auto& e : edges) {
 			Vector2f a = centerCoordinates(projectionMatrix.project(vertices[e.first]), win);
 			Vector2f b = centerCoordinates(projectionMatrix.project(vertices[e.second]), win);
-			array.append(Vertex(a, Color::White));
-			array.append(Vertex(b, Color::White));
+			array.append(Vertex(a, Color::Red));
+			array.append(Vertex(b, Color::Red));
 		}
 		win.draw(array);
 	}
@@ -240,8 +240,8 @@ const Matrix ISOMETRIC = Matrix(4, 4, { sqrt(3),    0,   -sqrt(3),  0,
 										   0,       0,       0,  sqrt(6) });
 const Matrix PERSPECTIVE = Matrix(4, 4, { 1, 0,   0,   0,
 										  0, 1,   0,   0,
-										  0, 0,   1,   400,
-										  0, 0, 1 / 400, 1 });
+										  0, 0,   1,   400.00,
+										  0, 0, 1 / 400.00, 1 });
 int main() 
 {
 	vector<Shape3d> shapes
